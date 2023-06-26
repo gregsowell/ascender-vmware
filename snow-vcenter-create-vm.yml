@@ -16,9 +16,9 @@
     # below are all of the details for the VM.  I'm overriding these at runtime.
     vm_datacenter: Central
     vm_name: snowtest2
-#    vm_template: TEMPLATE_WINDOWS_2016
-#    vm_template: TEMPLATE_RHEL_8.1
-    vm_template: TEMPLATE_CENTOS_8
+#    vm_template: Windows2016
+#    vm_template: Rocky8
+    vm_template: Rocky9
     vm_folder: /Ansible/Greg
     vm_disksize: 50
     vm_datastore: SSD
