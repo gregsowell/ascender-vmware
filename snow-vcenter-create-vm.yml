@@ -19,7 +19,7 @@
 #    vm_template: Windows2016
 #    vm_template: Rocky8
     vm_template: Rocky9
-    vm_folder: /Ansible/Greg
+    vm_folder: /Greg/ciq
     vm_disksize: 50
     vm_datastore: SSD
     # minimum of 4GB of RAM
