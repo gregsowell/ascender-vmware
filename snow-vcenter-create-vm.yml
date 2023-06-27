@@ -17,8 +17,8 @@
     vm_datacenter: MNS
     vm_name: snowtest2
 #    vm_template: Windows2016
-#    vm_template: Rocky8
-    vm_template: Rocky9
+    vm_template: Rocky8
+#    vm_template: Rocky9
     vm_folder: /Greg/ciq
     vm_disksize: 50
     vm_datastore: SSD
