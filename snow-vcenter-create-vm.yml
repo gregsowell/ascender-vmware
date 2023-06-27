@@ -9,9 +9,9 @@
 #      password: MyDDIpassword
 
     # vcenter variables should be passed in at run time.  I'm using a custom credential in tower.
-    vcenter_hostname: 10.1.2.3
-    vcenter_username: myUsername
-    vcenter_password: wrongpassword
+#    vcenter_hostname: 10.1.2.3
+#    vcenter_username: myUsername
+#    vcenter_password: wrongpassword
 
     # below are all of the details for the VM.  I'm overriding these at runtime.
     vm_datacenter: Central
@@ -29,10 +29,10 @@
     vm_ip: 10.1.12.56
     vm_netmask: 255.255.255.0
     vm_gateway: 10.1.12.1
-    
+
   tasks:
   - name: set creds from custom credential when supplied
-    when: gen1_pword is defined
+#    when: gen1_pword is defined
     no_log: true
     ansible.builtin.set_fact:
       vcenter_username: "{{ gen1_user }}"
