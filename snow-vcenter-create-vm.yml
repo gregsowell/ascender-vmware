@@ -64,11 +64,14 @@
             scsi: paravirtual
           networks:
           - name: "{{ vm_netname}}"
+            connected: true
+            start_connected: true
             type: static
 #        mac: aa:bb:dd:aa:00:14
             ip: "{{ vm_ip }}"
             netmask: "{{ vm_netmask }}"
             gateway: "{{ vm_gateway }}"
+            dns_servers: "{{ vm_gateway }}"
 #        device_type: vmxnet3
 #    delegate_to: localhost
         register: deploy_vm
