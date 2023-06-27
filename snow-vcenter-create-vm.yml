@@ -14,7 +14,7 @@
 #    vcenter_password: wrongpassword
 
     # below are all of the details for the VM.  I'm overriding these at runtime.
-    vm_datacenter: Central
+    vm_datacenter: MNS
     vm_name: snowtest2
 #    vm_template: Windows2016
 #    vm_template: Rocky8
