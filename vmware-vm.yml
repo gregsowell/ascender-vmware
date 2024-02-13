@@ -95,4 +95,5 @@
       name: "{{ vm_name }}"
       datacenter: "{{ vm_datacenter }}"
       state: absent
+      force: true
 
