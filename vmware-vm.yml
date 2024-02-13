@@ -37,33 +37,33 @@
   tasks:
   - name: connect to vcenter and do a basic provisioning
     when: vm_action == "provision"
-      community.vmware.vmware_guest:
-        <<: *vmware_auth
-        folder: "{{ vm_folder }}"
-        name: "{{ vm_name }}"
-        datacenter: "{{ vm_datacenter }}"
-        state: poweredon
+    community.vmware.vmware_guest:
+      <<: *vmware_auth
+      folder: "{{ vm_folder }}"
+      name: "{{ vm_name }}"
+      datacenter: "{{ vm_datacenter }}"
+      state: poweredon
 #      guest_id: centos64Guest
-        template: "{{ vm_template }}"
-    # This is hostname of particular ESXi server on which user wants VM to be deployed
-        disk:
-        - size_gb: "{{ vm_disksize }}"
-          type: thin
-          datastore: "{{ vm_datastore }}"
-        hardware:
-          memory_mb: "{{ vm_memory }}"
-          num_cpus: "{{ vm_cpus}}"
-          scsi: paravirtual
-        networks:
-        - name: "{{ vm_netname}}"
-          connected: true
-          start_connected: true
-          type: dhcp
-          # type: static
-          # ip: "{{ vm_ip }}"
-          # netmask: "{{ vm_netmask }}"
-          # gateway: "{{ vm_gateway }}"
-          # dns_servers: "{{ vm_gateway }}"
-        wait_for_ip_address: true
+      template: "{{ vm_template }}"
+  # This is hostname of particular ESXi server on which user wants VM to be deployed
+      disk:
+      - size_gb: "{{ vm_disksize }}"
+        type: thin
+        datastore: "{{ vm_datastore }}"
+      hardware:
+        memory_mb: "{{ vm_memory }}"
+        num_cpus: "{{ vm_cpus}}"
+        scsi: paravirtual
+      networks:
+      - name: "{{ vm_netname}}"
+        connected: true
+        start_connected: true
+        type: dhcp
+        # type: static
+        # ip: "{{ vm_ip }}"
+        # netmask: "{{ vm_netmask }}"
+        # gateway: "{{ vm_gateway }}"
+        # dns_servers: "{{ vm_gateway }}"
+      wait_for_ip_address: true
 #        device_type: vmxnet3
-      register: deploy_vm
+    register: deploy_vm
