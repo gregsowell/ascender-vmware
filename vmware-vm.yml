@@ -35,7 +35,7 @@
 
 
   tasks:
-  - name: connect to vcenter and do a basic provisioning
+  - name: Provision a VM
     when: vm_action == "provision"
     community.vmware.vmware_guest:
       <<: *vmware_auth
@@ -67,3 +67,32 @@
       wait_for_ip_address: true
 #        device_type: vmxnet3
     register: deploy_vm
+
+  - name: Start a VM
+    when: vm_action == "start"
+    community.vmware.vmware_guest:
+      <<: *vmware_auth
+      folder: "{{ vm_folder }}"
+      name: "{{ vm_name }}"
+      datacenter: "{{ vm_datacenter }}"
+      state: poweredon
+
+  - name: Stop a VM
+    when: vm_action == "stop"
+    community.vmware.vmware_guest:
+      <<: *vmware_auth
+      folder: "{{ vm_folder }}"
+      name: "{{ vm_name }}"
+      datacenter: "{{ vm_datacenter }}"
+      # state: poweredoff
+      state: shutdownguest 
+
+  - name: Delete a VM
+    when: vm_action == "delete"
+    community.vmware.vmware_guest:
+      <<: *vmware_auth
+      folder: "{{ vm_folder }}"
+      name: "{{ vm_name }}"
+      datacenter: "{{ vm_datacenter }}"
+      state: absent
+
