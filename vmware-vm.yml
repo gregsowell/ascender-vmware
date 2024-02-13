@@ -1,5 +1,5 @@
 ---
-- name: Control VMs in a VMWare environment
+- name: Create and control VMs on VMWare using Ascender
   hosts: localhost
   gather_facts: false
   vars:
